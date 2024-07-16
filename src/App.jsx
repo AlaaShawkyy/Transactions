@@ -1,4 +1,4 @@
-// App.js
+ 
 import   { useState, useEffect } from 'react';
 import CustomerTable from './components/Table';
 import TransactionGraphModal from './components/Chart';

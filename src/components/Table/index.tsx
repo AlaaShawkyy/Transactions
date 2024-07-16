@@ -1,6 +1,7 @@
 // CustomerTable.js
 import React, { useState } from 'react';
 import Table from 'react-bootstrap/Table';
+import TransactionGraphModal from '../Chart';
 
 const CustomerTable = ({ customers, transactions, openTransactionsModal }) => {
   const [nameFilter, setNameFilter] = useState('');
@@ -42,22 +43,28 @@ const CustomerTable = ({ customers, transactions, openTransactionsModal }) => {
         </thead>
         <tbody>
           {filteredCustomers.map(customer => (
-            <tr key={customer.id}>
+           <>  <tr key={customer.id}>
               <td>{customer.id}</td>
               <td>{customer.name}</td>
               <td>
                 <button
-                  className="btn btn-primary"
-                  onClick={() => openTransactionsModal(customer.id)}
+                  className="btn btn-primary" 
+                type="button" data-bs-toggle="modal" data-bs-target="#chartModal"
+
                 >
                   View Transactions
                 </button>
               </td>
             </tr>
+            <TransactionGraphModal customerId={customer.id} transactions={transactions} />
+            </>
+            
           ))}
         </tbody>
       </Table>
+      
     </div>
+    
   );
 };
 
