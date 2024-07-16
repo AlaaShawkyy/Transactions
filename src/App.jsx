@@ -3,7 +3,7 @@ import   { useState, useEffect } from 'react';
 import CustomerTable from './components/Table';
 import TransactionGraphModal from './components/Chart';
 import NavBar from './components/Navbar/indes';
-
+import "./App.css"
 function App() {
   const [customers, setCustomers] = useState([]);
   const [transactions, setTransactions] = useState([]);
@@ -24,9 +24,9 @@ function App() {
   };
 
   return (
-    <div className=" ">
+    <>
 <NavBar/>
-      <h1 className="text-center mb-4">Customer Transactions</h1>
+      <h1 className="text-center mb-4 text-white">Customers Transactions</h1>
       <div className='d-flex justify-content-center'>
       <CustomerTable
         customers={customers}
@@ -41,8 +41,8 @@ function App() {
           onClose={() => setSelectedCustomer(null)}
        />
       )}
-
-    </div>
+   
+    </>
   );
 }
 

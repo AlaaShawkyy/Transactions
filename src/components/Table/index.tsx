@@ -1,5 +1,4 @@
-// CustomerTable.js
-import React, { useState } from 'react';
+ import React, { useState } from 'react';
 import Table from 'react-bootstrap/Table';
 import TransactionGraphModal from '../Chart';
 
@@ -16,7 +15,7 @@ const CustomerTable = ({ customers, transactions, openTransactionsModal }) => {
   );
 
   return (
-    <div className='m-2 container'>
+    <div className='m-2 container '>
         <div className='d-flex gap-5 '>
       <input
         type="text"
@@ -33,7 +32,7 @@ const CustomerTable = ({ customers, transactions, openTransactionsModal }) => {
         onChange={(e) => setAmountFilter(e.target.value)}
       />
         </div>
-      <Table className=' shadow-lg'>
+      <Table className='bg-white shadow-lg'>
         <thead>
           <tr>
             <th>ID</th>
@@ -62,7 +61,7 @@ const CustomerTable = ({ customers, transactions, openTransactionsModal }) => {
           ))}
         </tbody>
       </Table>
-      
+     
     </div>
     
   );
